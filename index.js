@@ -1,8 +1,14 @@
 const express = require("express");
 const app = express();
 const auth = require("./routes/auth");
+const post = require("./routes/post");
+const comment = require("./routes/comment");
+const likes = require("./routes/likes");
 
 app.use("/auth", auth);
+app.use("/post", post);
+app.use("/comment", comment);
+app.use("/likes", likes);
 app.use(express.json());
 
 app.get("/", (req, res) => {
